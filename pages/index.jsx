@@ -1,5 +1,12 @@
+import ProductList from "@/components/ProductList";
+
 function ProductPage() {
-  return <div style={{ color: 'blue' }}>hello next</div>;
+  return (
+    <div>
+      <h1>상품목록 페이지</h1>
+      <ProductList />
+    </div>
+  )
 }
 
 export default ProductPage;
