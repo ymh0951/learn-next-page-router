@@ -1,6 +1,11 @@
+import ProductHeader from "@/components/ProductHeader";
+
 export default function ProductDetailPage({ productId }) {
     return (
-        <div>{productId}</div>
+        <div>
+            <ProductHeader title="상세 정보 페이지" />
+            <div>{productId}</div>
+        </div>
     )
 }
 
