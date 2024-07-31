@@ -1,6 +1,6 @@
 import ProductHeader from "@/components/ProductHeader";
 import { fetchProductById } from "@/api";
-import ProductInfo from "@/components/ProductInfo";
+import ProductInfo from "@/components/product-detail/ProductInfo";
 
 export default function ProductDetailPage({ productDetail }) {
     const headerTitle = '상품 상세 정보 페이지!!';

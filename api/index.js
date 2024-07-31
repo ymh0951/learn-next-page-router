@@ -15,11 +15,18 @@ function fetchProductById(id) {
 };
 
 // 장바구니에 아이템을 추가하는 API 함수
-function createCartItem(id, name) {
+function createCartItem({ id, name, imageUrl, price }) {
   return instance.post("/carts", {
     id: id,
-    name: name
+    name,
+    imageUrl,
+    price
   });
 }
 
-export { fetchProducts, fetchProductById, createCartItem };
+// 장바구니 목록을 들고오는 API 함수
+function fetchCarts() {
+  return instance.get('/carts');
+}
+
+export { fetchProducts, fetchProductById, createCartItem, fetchCarts };
