@@ -29,4 +29,9 @@ function fetchCarts() {
   return instance.get('/carts');
 }
 
-export { fetchProducts, fetchProductById, createCartItem, fetchCarts };
+// 특정 아이디에 해당하는 장바구니 아이템을 삭제하는 API 함수
+function removeCartItem(id) {
+  return instance.delete(`/carts/${id}`)
+}
+
+export { fetchProducts, fetchProductById, createCartItem, fetchCarts, removeCartItem };
