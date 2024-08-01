@@ -3,12 +3,10 @@ import CartHeader from '@/components/cart/CartHeader';
 import CartList from '@/components/cart/CartList';
 
 function CartPage({ carts }) {
-  console.log(carts);
-
   return (
     <div>
       <CartHeader />
-      <CartList />
+      <CartList carts={carts} />
     </div>
   )
 }
