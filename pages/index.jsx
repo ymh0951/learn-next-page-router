@@ -16,7 +16,7 @@ function Counter() {
     <div>
       <p data-cy="counter">{counter}</p>
       <button data-cy="add-button" onClick={increaseCounter}>+</button>
-      <button onClick={decreaseCounter}>-</button>
+      <button data-cy="minus-button" onClick={decreaseCounter}>-</button>
     </div>
   )
 }
@@ -26,9 +26,8 @@ function ProductPage() {
 
   return (
     <div>
-      <Counter></Counter>
-      {/* <ProductHeader title={headerTitle} />
-      <ProductList /> */}
+      <ProductHeader title={headerTitle} />
+      <ProductList />
     </div>
   )
 }
