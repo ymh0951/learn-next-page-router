@@ -3,6 +3,8 @@ import styles from '@/components/product-detail/ProductInfo.module.css'
 import { useRouter } from 'next/router';
 import { createCartItem } from '@/api';
 
+export const ALERT_MESSAGE = '장바구니에 추가됨';
+
 export default function ProductInfo({ productDetail }) {
     const router = useRouter();
     const { id, name, imageUrl, price } = productDetail;
@@ -10,7 +12,7 @@ export default function ProductInfo({ productDetail }) {
     const addCart = async () => {
         // 1. 장바구니에 아이템을 담는 API 함수 호출
         await createCartItem(productDetail);
-        alert('장바구니에 추가됨');
+        alert(ALERT_MESSAGE);
         // 2. 장바구니 페이지로 이동
         router.push('/cart');
     };
@@ -19,6 +21,7 @@ export default function ProductInfo({ productDetail }) {
     <div className={styles.container}>
         <div>
             <Image 
+                data-cy="product-image"
                 src={imageUrl}
                 width={250}
                 height={250}
@@ -26,9 +29,9 @@ export default function ProductInfo({ productDetail }) {
             />
         </div>
         <div className={styles.description}>
-            <p>{name}</p>
-            <p>{price}</p>
-            <button onClick={addCart}>장바구니에 담기</button>
+            <p data-cy="product-name">{name}</p>
+            <p data-cy="product-price">{price}</p>
+            <button data-cy="cart-button" onClick={addCart}>장바구니에 담기</button>
         </div>
     </div>
   )
